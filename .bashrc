@@ -19,3 +19,4 @@ export EDITOR='vim'
 export OPENER='xdg-open'
 
 
+
