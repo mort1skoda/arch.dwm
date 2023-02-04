@@ -3,6 +3,7 @@ xset -dpms &
 xset s 0 0 &
 exec st &
 exec st &
+exex st &
 exec dwm
 
 
