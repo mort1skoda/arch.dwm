@@ -4,3 +4,7 @@
 ! gc
 $ l
 $ ls
+: echo $EDITOR
+$ q
+$ q
+$ qq
