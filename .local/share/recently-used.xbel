@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/m/Downloads/dwm-6.4.tar.gz" added="2023-02-03T13:22:32.576954Z" modified="2023-02-03T13:22:33.887139Z" visited="2023-02-03T13:22:32.576957Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-compressed-tar"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2023-02-03T13:22:33.887133Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/m/Downloads/st-0.9.tar.gz" added="2023-02-04T00:23:39.870615Z" modified="2023-02-04T00:23:40.826210Z" visited="2023-02-04T00:23:39.870620Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-compressed-tar"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2023-02-04T00:23:40.826200Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/m/Downloads/dmenu-5.2.tar.gz" added="2023-02-04T18:34:54.078980Z" modified="2023-02-04T18:34:55.055791Z" visited="2023-02-04T18:34:54.078985Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-compressed-tar"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2023-02-04T18:34:55.055778Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/m/Downloads/philips_chassis_qfu1.2e_la.pdf" added="2023-02-04T19:40:32.051470Z" modified="2023-02-04T20:47:14.875768Z" visited="2023-02-04T19:40:32.051475Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2023-02-04T20:47:14.875756Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/m/Downloads/philips_chassis_qfu1.2e_la-cpy.pdf" added="2023-02-04T19:41:08.660160Z" modified="2023-02-04T19:41:09.315032Z" visited="2023-02-04T19:41:08.660163Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2023-02-04T19:41:09.315018Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/m/Downloads/philips_chassis_qfu1.2e_la-1.pdf" added="2023-02-04T20:35:09.489850Z" modified="2023-02-04T20:35:09.489868Z" visited="2023-02-04T20:35:09.489853Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2023-02-04T20:35:09.489861Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

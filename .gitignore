@@ -1,0 +1,12 @@
+# list of files you do not want in your repo
+.cache/
+.config/gh/
+.lesshst
+.viminfo
+.bash_history
+*Xorg.0.log*
+.Xauthority
+Downloads
+.mozilla
+.local/share/vifm/Trash/
+
