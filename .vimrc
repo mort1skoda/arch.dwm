@@ -5,12 +5,12 @@
 """"""""""""""""""""""""
 " Author: Morten Håkestad <mort1skoda@gmail.com>
 
-
 " echom"in /home/m/.vimrc"
 " see dbgvim alias in .bash_aliases
-"-----------------------------------------------------------}}}
+" 
+" alias dbgvim="vim -V20 2>&1 | tee vim.logfile.txt.vim
 
-set list    " $ at line ending
+"-----------------------------------------------------------}}}
 
 
 "--- folds -------------------{{{
@@ -21,19 +21,19 @@ nnoremap fo zr   " open all
 "-----------------------------}}}
 
 
-" - SETTINGS -----------------------------------------------------{{{
-
+"--- settings --------------------------------------------------------------------{{{
 " Do not wrap lines. Allow long lines to extend as far as the line goes.
 set nowrap
 "set wrap
 set textwidth=200
-"set spell spelllang=en_us
+
+set list    " $ at line ending
 "Turn off spell
 set nospell
 
 setlocal foldmethod=marker
 
-" when using ,v  the new pane will be on the right side.
+" when using ,vv  the new pane will be on the right side.
 " with respect to the pane you give the command from.
 set splitright
 
@@ -114,23 +114,20 @@ colorscheme 12my.desert
 "------------------------------------------------------------------------------}}}
 
 
-" in normal, insert, visual and command mode.
-
-" toggle fold
-nnoremap ff za
-
+"--- movements -----------------------------------------------------------------{{{
 " å = go to end of line, 0=go to beginning of line.
-nnoremap å $:echo'å=go to end of line'<CR>
-nnoremap 0 0:echo'0=go to start of line'<CR>
-
-nnoremap h h:echo'-- NORMAL --   h-left'<CR>
-nnoremap j j:echo'-- NORMAL --   j-down'<CR>
-nnoremap k k:echo'-- NORMAL --   k-up'<CR>
-nnoremap l l:echo'-- NORMAL --   l-right'<CR>
+"nnoremap å $:echo'å=go to end of line'<CR>
+nnoremap 0 0
+nnoremap $ $
+nnoremap h h
+nnoremap j j
+nnoremap k k
+nnoremap l l
 
 " speed up scrolling
-nnoremap <C-e> 4<C-e>:echo 'scroll dwn'<CR>
-nnoremap <C-y> 4<C-y>:echo 'scroll up'<CR>
+nnoremap <C-e> 3<C-e>:echo 'scroll dwn'<CR>
+nnoremap <C-y> 3<C-y>:echo 'scroll up'<CR>
+"-------------------------------------------------------------------------------}}}
 
 
 "- panes -------------------------------------{{{
@@ -158,7 +155,7 @@ nnoremap <S-K> <c-w>-:echo 'Resize pane SHIFT-K=up'<CR>
 "inoremap <S-K> <ESC>kli
 "
 "---------------------------------------------}}}
-nnoremap u u:echom"-- NORMAL -- u=undo last change"<cr>
+nnoremap u u
 
 " U: Undo latest changes to one line. This command is unique because it will
 " create a new entry instead of reverting back to an old entry. This means you
@@ -210,7 +207,7 @@ nnoremap <tab> i<tab><esc>:echo"-- NORMAL -- tab=insert tab=4spaces"<cr>
 " ctrl-x to search and replace.
 nnoremap <C-x> :%s/
 " ctrl-f find
-nnoremap <C-f> /
+"nnoremap <C-f> /
 
 
 

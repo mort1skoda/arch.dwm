@@ -180,7 +180,7 @@ alias ,md='make dbg'
 
 #--- debug ------------------------------------------------{{{
 alias keycodes="sed -n l"
-alias dbgvim="vim -V20 2>&1 | tee vim.logfile.txt.vim && vim vim.logfile.txt.vim"
+alias dbgvim='vim -V20 2>&1 | tee vim.logfile.txt.vim'
 
 # remove all packages that don’t depend on other packages
 # you may have to do this over and over:
