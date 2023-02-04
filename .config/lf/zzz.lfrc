@@ -1,3 +1,4 @@
+set shell bash
 set hidden
 EDITOR=vim
 
