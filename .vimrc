@@ -7,7 +7,6 @@
 
 " echom"in /home/m/.vimrc"
 " see dbgvim alias in .bash_aliases
-" 
 " alias dbgvim="vim -V20 2>&1 | tee vim.logfile.txt.vim
 
 "-----------------------------------------------------------}}}
