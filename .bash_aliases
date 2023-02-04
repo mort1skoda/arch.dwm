@@ -135,6 +135,7 @@ alias gb='git branch'
 alias grc='git rm -r --cached '
 alias grl='git reflog '
 alias gcl='git clone '
+alias gacp='gaa && gc && gp'
 # mapleader = , here , is vim 
 alias egi='vim .gitignore'
 alias egc='vim ~/.gitconfig'
