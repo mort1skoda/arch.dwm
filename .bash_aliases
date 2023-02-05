@@ -185,7 +185,7 @@ alias dbgvim='vim -V20 2>&1 | tee vim.logfile.txt.vim'
 # remove all packages that don’t depend on other packages
 # you may have to do this over and over:
 alias nodep="pacman -Qdtq"
-alias rem.no.dep="sudo pacman -R '$(pacman -Qdtq)' "
+alias qdtq='sudo pacman -R "$(pacman -Qdtq)" '
 
 #----------------------------------------------------------}}}
 
