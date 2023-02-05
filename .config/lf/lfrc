@@ -5,6 +5,7 @@ set hidden
 
 map gs ${{clear; git status; echo "press ENTER"; read ENTER}}
 
+#map <c-q> q
 
 
 
