@@ -2,11 +2,13 @@
 .cache/
 .config/gh/
 .lesshst
+.local/share/recent*
 .viminfo
 .bash_history
 *Xorg.0.log*
 .Xauthority
 Desktop
+Documents
 Downloads
 .mozilla
 .local/share/vifm/Trash/
