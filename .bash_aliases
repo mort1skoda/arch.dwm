@@ -39,7 +39,7 @@ alias .wc='cd /mnt/c && ls -la --color --group-directories-first'
 alias .wd='cd /mnt/d && ls -la --color --group-directories-first'
 
 # list directories:
-alias l='ls -la --color --group-directories-first && git branch && git status'
+alias l='ls -la --color --group-directories-first && git branch && git status && git remote -v | grep -m1 github'
 alias ll='ls -l --color --group-directories-first'
 alias ls='ls --color --group-directories-first'
 alias lg='ls -la --color --group-directories-first | grep -i --color '
