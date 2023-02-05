@@ -4,6 +4,7 @@
 .lesshst
 .local/share/recent*
 .viminfo
+.wget-hsts
 .bash_history
 *Xorg.0.log*
 .Xauthority
@@ -12,5 +13,6 @@ Documents
 Downloads
 .mozilla
 .local/share/vifm/Trash/
+*.iso
 *.out
 

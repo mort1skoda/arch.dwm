@@ -31,7 +31,7 @@ alias bl='bash --login'
 alias ..='cd .. && ls -la --color --group-directories-first'
 alias ...='cd ../.. && ls -la --color --group-directories-first'
 alias .r='cd / && ls -la --color --group-directories-first'
-alias .h='cd ~ && ls -la --color --group-directories-first'
+alias .h='cd ~ && ls -la --color --group-directories-first && gb && gs'
 alias .d='cd /home/sda4data && ls -la --color --group-directories-first'
 
 # windows C:\ and D:\
