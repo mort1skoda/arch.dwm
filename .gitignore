@@ -15,4 +15,5 @@ Downloads
 .local/share/vifm/Trash/
 *.iso
 *.out
+.ssh
 
