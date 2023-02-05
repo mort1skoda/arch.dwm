@@ -10,4 +10,5 @@ Desktop
 Downloads
 .mozilla
 .local/share/vifm/Trash/
+*.out
 
