@@ -1,69 +1,88 @@
-
-
-
+"
+"
+"
 " echom"~/.vimrc"
-
-
-
+"
+"
+"
 "--- ~/.vimrc -------------------------------------------------{{{
-" Author: Morten Håkestad <mort1skoda@gmail.com>
-
+" Author: Morty Hawk <mort1skoda@gmail.com>
+" Email:  <mort1skoda@gmail.com>
+"         <mort1prog@gmail.com>
+"
+" News:
+" <c-j> scroll down
+" <c-k> scroll up
 " ,ss = :source ~/:vimrc
 " ,ebp = edit .bash_profile
-
-" see dbgvim alias in .bash_aliases
+" @f create fold
+" ,fo create fold
+"
+"
+"
+" see dbgvim  in .bash_aliases
 " alias dbgvim="vim -V20 2>&1 | tee vim.log.vim
-
 "-------------------------------------------------------------}}}
 
 
 
+"--- colorscheme and font ---------------------------------{{{
+syntax on
+colorscheme 12my.desert
+set guifont=Consolas:h9:cANSI
+
+"################ DRACULA dracula ###########
+"packadd! dracula
+"syntax enable
+"colorscheme dracula
+"################ dracula DRACULA ###########
+"----------------------------------------------------------}}}
+
+
+
 "--- folds -------------------{{{
-"setlocal foldmethod=marker
+set foldmethod=marker
 nnoremap ff za   " toogle fold
 nnoremap fc zm   " close all
 nnoremap fo zr   " open all
+nnoremap <Leader>fo i -------------------{{{<cr>"----------------------------}}}<cr><esc>
 "-----------------------------}}}
 
 
 
-"--- settings --------------------------------------------------------------------{{{
-" Do not wrap lines. Allow long lines to extend as far as the line goes.
-set nowrap
-"set wrap
-set textwidth=200
-
-set list    " $ at line ending
-"Turn off spell
-set nospell
-
-setlocal foldmethod=marker
-
-" when using ,vv  the new pane will be on the right side.
-" with respect to the pane you give the command from.
-set splitright
-
-" Expand aliases.
-let $BASH_ENV = "~/.aliases.sh"
-
+"--- cursor --------------------{{{
 " Block cursor in Normal mode, vertical cursor in Insert mode,
 " horizontal cursor in Replace mode
 let &t_EI = "\<Esc>[1 q"
 let &t_SR = "\<Esc>[3 q"
 let &t_SI = "\<Esc>[5 q"
+"-------------------------------}}}
+
+
+
+"--- settings --------------------------------------------------------------------{{{
+set noswapfile
+
+let mapleader = ","     " mapleader = ,
+set nowrap              " allow lines to extende as far as the line goes.
+set textwidth=200       " set a line limit before wrap.
+set list                " $ at line ending
+set nospell             " turn of spell checking.
+
+
+" Expand aliases.
+let $BASH_ENV = "~/.bash_aliases"
+
 
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 " Do not create .swp files
-set noswapfile
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
 filetype on
 " Enable plugins and load plugin for the detected file type.
 filetype plugin on
 " Load and indent file for the detected file type.
 filetype indent on
-" Turn syntax highlighting on.
-syntax on
 " Add numbers to each line on the left-hand side.
 set number
 " turn relative line numbers on
@@ -108,54 +127,51 @@ set wildmode=list:longest
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
-" Set the color scheme.
-colorscheme 12my.desert
 
 
-"################ DRACULA dracula ###########
-"packadd! dracula
-"syntax enable
-"colorscheme dracula
-"################ dracula DRACULA ###########
+
+
+
+
+
+
+
+
+
 "------------------------------------------------------------------------------}}}
 
 
 
 "--- movements -----------------------------------------------------------------{{{
-" å = go to end of line, 0=go to beginning of line.
-"nnoremap å $:echo'å=go to end of line'<CR>
-nnoremap 0 0:echo"0 > beginning of line"<cr>
-nnoremap $ $
-nnoremap h h
-nnoremap j j
-nnoremap k k
-nnoremap l l
+nnoremap 0 0:echo"0 = beginning of line"<cr>
+nnoremap $ $:echo"$ = end of line"<cr>
+nnoremap h h:echo "-- NORMAL -- h"<cr>
+nnoremap j j:echo "-- NORMAL -- j"<cr>
+nnoremap k k:echo "-- NORMAL -- k"<cr>
+nnoremap l l:echo "-- NORMAL -- l"<cr>
 
-
-
-nnoremap o o<esc>
-nnoremap O O<esc>
-
+nnoremap o o<esc>:echo"o = open line below"<cr>
+nnoremap O O<esc>:echo"O = Open line above"<cr>
 
 " speed up scrolling
-nnoremap <C-e> 3<C-e>:echo 'scroll dwn'<CR>
-nnoremap <C-y> 3<C-y>:echo 'scroll up'<CR>
+nnoremap <C-j> 3<C-e>:echo 'scroll dwn'<CR>
+nnoremap <C-k> 3<C-y>:echo 'scroll up'<CR>
 "-------------------------------------------------------------------------------}}}
 
 
 
-"- panes -------------------------------------{{{
-"
-let mapleader = ","
-"
-" ,vv for vertical split ,hh for horizonal split
-nnoremap <Leader>vv :vs<CR>:edit ~/.vimrc<CR>
-nnoremap <Leader>hh :sp<CR>: source ~/.vimrc<cr>
+"--- panes ------------------------------------------------------{{{
+set splitright
+
+nnoremap <Leader>vv :vs<CR>
+nnoremap <Leader>hh :sp<CR>
+
 " ctrl-hjkl navigate panes
 nnoremap <C-l> <C-w>l:echo 'nav pane right:' expand('%:p')<CR>
 nnoremap <C-h> <C-w>h:echo 'nav pane left:' expand('%:p')<CR>
-nnoremap <C-j> <C-w>j:echo 'nav pane dwn:' expand('%:p')<CR>
-nnoremap <C-k> <C-w>k:echo 'nav pane up:' expand('%:p')<CR>
+"nnoremap <C-j> <C-w>j:echo 'nav pane dwn:' expand('%:p')<CR>
+"nnoremap <C-k> <C-w>k:echo 'nav pane up:' expand('%:p')<CR>
+
 " Resize panes: SHIFT-L and SHIFT-H
 nnoremap <S-L> 2<c-w><:echo 'Resize pane SHIFT-L=>'<CR>
 nnoremap <S-H> 2<c-w>>:echo 'Resize pane SHIFT-H=<'<CR>
@@ -168,7 +184,7 @@ nnoremap <S-K> <c-w>-:echo 'Resize pane SHIFT-K=up'<CR>
 "inoremap <S-J> <ESC>jli
 "inoremap <S-K> <ESC>kli
 "
-"---------------------------------------------}}}
+"----------------------------------------------------------------}}}
 
 
 
@@ -188,7 +204,7 @@ nnoremap dd dd:echo'Normal dd=delete line'<cr>
 nnoremap D  d$:echo'Normal  D=Delete from cursor to end of line'<cr>
 nnoremap d0 d0:echo'delete for cursor til beginning of line'
 nnoremap dw dw:echo'delete til beginning of next word'<cr>
-nnoremap de de:ehoc'delete til end of word'
+nnoremap de de:ehoc'delete til end of word'<cr>
 nnoremap df df
 nnoremap dt dt
 nnoremap di di
@@ -235,6 +251,7 @@ nnoremap <C-x> :%s/
 
 
 "--- mapleader , -------------------------------------------------------------------------{{{
+
 let $BASH_PROFILE = '~/.bash_profile'
 let $BASHRC  = '~/.bashrc'
 let $BASH_ALIASES = '~/.bash_aliases'
@@ -257,6 +274,7 @@ nnoremap <Leader>mr :!make run<CR>
 nnoremap <Leader>md :!make dbg<CR>
 
 " open vim integrated file explorer
+" TODO: add support for lf !!!
 nnoremap <Leader>ex :Lexplore<CR>7<C-w><
 
 " ,ch = leader comment hash
@@ -270,17 +288,19 @@ nnoremap <Leader>cc I//<ESC>j
 
 
 "--- @ macros --------------------------------------------------------{{{
+let @f = "i -------------{{{\<Esc>jI\"-----------------------------}}}\<Esc>"
+
 " @c comment C line  //
-"let @c="I// \<Esc>j"
+let @c = "I// \<Esc>j"
 "
 "" @u uncomment C line
-"let @u = "I\<Del>\<Del>\<Del>\<Esc>j"
+let @u = "I\<Del>\<Del>\<Del>\<Esc>j"
 "
 "" @p printf("
-"let @p = "Iprintf(\""
+let @p = "Iprintf(\""
 "
 "" @f for(int i = 0; i < 10; i++){
-"let @f = "I\<TAB>for(int i = 0; i < 10; i++){\<esc>I\<tab>\<tab>"
+"let @o = "I\<TAB>for(int i = 0; i < 10; i++){\<esc>I\<tab>\<tab>"
 "---------------------------------------------------------------------}}}
 
 
@@ -325,7 +345,7 @@ inoremap <c-q> <ESC>:wq<cr>
 vnoremap <c-q> <ESC>:wq<cr>
 cnoremap <c-q> <ESC>:wq<cr>
 " from Normal mode you can type q followed by enter to quit without saving
-nnoremap q :q<cr>
+nnoremap q :q<cr><esc>
 "----------------------------------------------------------------------------------}}}
 
 
