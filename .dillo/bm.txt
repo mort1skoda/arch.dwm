@@ -1,2 +1,0 @@
-:s0: Unclassified
-s0 www.linuxfromscratch.org lfs
