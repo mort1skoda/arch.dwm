@@ -255,28 +255,6 @@ nnoremap <Leader>cc I//<ESC>j
 "-----------------------------------------------------------------------------------------}}}
 
 
-"--- Escape Save Source Quit ------------------------------------------------------{{{
-set noesckeys
-set ttimeout
-set ttimeoutlen=400
-set timeoutlen=300
-nnoremap <esc> <esc>:echo"-- NORMAL -- esc"<cr>
-inoremap <esc> <esc>l:echo"-- NORMAL -- esc"<cr>
-
-
-nnoremap <C-s> <esc>:w<cr>:so ~/.vimrc<cr>
-inoremap <C-s> <esc>:w<cr>l
-vnoremap <C-s> <esc>:w<cr>l
-cnoremap <C-s> <esc>:w<cr>l
-
-
-nnoremap <c-q> :wq<cr>
-inoremap <c-q> <ESC>:wq<cr>
-vnoremap <c-q> <ESC>:wq<cr>
-cnoremap <c-q> <ESC>:wq<cr>
-" from Normal mode you can type q followed by enter to quit without saving
-nnoremap q :q<cr>
-"----------------------------------------------------------------------------------}}}
 
 
 "--- @ macros --------------------------------------------------------{{{
@@ -311,6 +289,32 @@ nnoremap q :q<cr>
 "------------------------------------------------------------}}}
 
 
+"--- esc save source quit ------------------------------------------------------{{{
+set noesckeys
+set ttimeout
+set ttimeoutlen=300
+set timeoutlen=200
+nnoremap <esc> <esc>:echo"-- NORMAL -- esc"<cr>
+inoremap <esc> <esc>l:echo"-- NORMAL -- esc"<cr>
+vnoremap <esc> <esc>:echo"-- NORMAL -- esc"<cr>
+cnoremap <esc> <esc>:echo"-- NORML -- esc"<cr>
+
+nnoremap <C-s> <esc>:w<cr>
+inoremap <C-s> <esc>:w<cr>l
+vnoremap <C-s> <esc>:w<cr>
+cnoremap <C-s> <esc>:w<cr>
+
+nnoremap √√∏ :source ~/.vimrc<cr>:echo"sourced: ~/.vimrc"<cr>
+
+nnoremap <c-q> :wq<cr>
+inoremap <c-q> <ESC>:wq<cr>
+vnoremap <c-q> <ESC>:wq<cr>
+cnoremap <c-q> <ESC>:wq<cr>
+" from Normal mode you can type q followed by enter to quit without saving
+nnoremap q :q<cr>
+"----------------------------------------------------------------------------------}}}
+
+
 "--- statusline -----------------------------------{{{
 set statusline=
 set laststatus=2
@@ -318,5 +322,6 @@ set laststatus=2
 "set statusline+=%=
 "set statusline+=row:%l\ col:%c\ percent:%p%%
 "--------------------------------------------------}}}
+
 
 

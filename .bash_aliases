@@ -62,7 +62,7 @@ alias os='cat /etc/os-release'
 alias wa='whoami'
 
 # source profile, bashrc, aliases 
-alias sp='source ~/.bash_profile'
+alias sbp='source ~/.bash_profile'
 alias sb='source ~/.bashrc'
 alias sa='source ~/.bash_aliases'
 
@@ -92,7 +92,7 @@ alias v='vim'
 alias vi='vim'
 alias ea='vim ~/.bash_aliases && . ~/.bash_aliases'
 alias eb='vim ~/.bashrc && . ~/.bashrc'
-alias ebp='vim ~/.bash_profile . ~/.bash_profile'
+alias ebp='vim ~/.bash_profile && source ~/.bash_profile'
 alias ev='vim ~/.vimrc'
 alias evf='vim ~/.vifm/vifmrc.vim'
 alias ex='vim ~/.xinitrc'
