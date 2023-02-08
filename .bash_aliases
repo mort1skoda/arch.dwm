@@ -180,10 +180,10 @@ alias ,md='make dbg'
 
 #--- debug ------------------------------------------------{{{
 alias keycodes="sed -n l"
-alias dbgvim='vim -V20 2>&1 | tee vim.logfile.txt.vim'
+alias dbgvim='vim -V20 2>&1 | tee vim.log.vim'
 
-# remove all packages that don’t depend on other packages
-# you may have to do this over and over:
+# remove all packages that don't depend on other packages
+# you may have to do this over several times.
 alias nodep="pacman -Qdtq"
 alias qdtq='sudo pacman -R "$(pacman -Qdtq)" '
 
@@ -196,6 +196,6 @@ alias qdtq='sudo pacman -R "$(pacman -Qdtq)" '
 #echo    "                Sourced:" $ALIASES 
 #echo -e "---|---|....end.." $ALIASES "....|---|---"
 #-----------------------------------------------------------}}}
-#
-#
-#
+
+
+

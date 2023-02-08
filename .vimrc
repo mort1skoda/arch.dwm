@@ -1,23 +1,30 @@
 
 
-"--- header -----------------------------------------------------{{{
-""""    ~/.vimrc    """"
-""""""""""""""""""""""""
+
+" echom"~/.vimrc"
+
+
+
+"--- ~/.vimrc -------------------------------------------------{{{
 " Author: Morten Håkestad <mort1skoda@gmail.com>
 
-" echom"in /home/m/.vimrc"
-" see dbgvim alias in .bash_aliases
-" alias dbgvim="vim -V20 2>&1 | tee vim.logfile.txt.vim
+" ,ss = :source ~/:vimrc
+" ,ebp = edit .bash_profile
 
-"-----------------------------------------------------------}}}
+" see dbgvim alias in .bash_aliases
+" alias dbgvim="vim -V20 2>&1 | tee vim.log.vim
+
+"-------------------------------------------------------------}}}
+
 
 
 "--- folds -------------------{{{
-setlocal foldmethod=marker
+"setlocal foldmethod=marker
 nnoremap ff za   " toogle fold
 nnoremap fc zm   " close all
 nnoremap fo zr   " open all
 "-----------------------------}}}
+
 
 
 "--- settings --------------------------------------------------------------------{{{
@@ -113,20 +120,28 @@ colorscheme 12my.desert
 "------------------------------------------------------------------------------}}}
 
 
+
 "--- movements -----------------------------------------------------------------{{{
 " å = go to end of line, 0=go to beginning of line.
 "nnoremap å $:echo'å=go to end of line'<CR>
-nnoremap 0 0
+nnoremap 0 0:echo"0 > beginning of line"<cr>
 nnoremap $ $
 nnoremap h h
 nnoremap j j
 nnoremap k k
 nnoremap l l
 
+
+
+nnoremap o o<esc>
+nnoremap O O<esc>
+
+
 " speed up scrolling
 nnoremap <C-e> 3<C-e>:echo 'scroll dwn'<CR>
 nnoremap <C-y> 3<C-y>:echo 'scroll up'<CR>
 "-------------------------------------------------------------------------------}}}
+
 
 
 "- panes -------------------------------------{{{
@@ -154,16 +169,10 @@ nnoremap <S-K> <c-w>-:echo 'Resize pane SHIFT-K=up'<CR>
 "inoremap <S-K> <ESC>kli
 "
 "---------------------------------------------}}}
-nnoremap u u
 
-" U: Undo latest changes to one line. This command is unique because it will
-" create a new entry instead of reverting back to an old entry. This means you
-" can actually press u to undo the changes done with U.
 
-nnoremap o o<esc>
-nnoremap O O<esc>
 
-" Y,D,C = Yank, Delete, Change from cursor to the end of line.
+"--- yank delete change paste undo -------------------------------------{{{
 
 nnoremap yy yy
 nnoremap Y  y$:echo'Normal  Y=Yank from cursor to end of line'<CR>
@@ -209,33 +218,37 @@ nnoremap x x:echom"-- NORMAL -- x=delete one char"<cr>
 nnoremap <space> i<space><esc>:echom"-- NORMAL -- space=insert space"<cr> 
 nnoremap <tab> i<tab><esc>:echo"-- NORMAL -- tab=insert tab=4spaces"<cr>
 
-
+nnoremap u u
+"---------------------------------------------------------------------------}}}
+"
+"
+"
+"--- search and replace ----------------------------------{{{"
+"
 " ctrl-x to search and replace.
 nnoremap <C-x> :%s/
 " ctrl-f find
 "nnoremap <C-f> /
 
-
-
+"---------------------------------------------------------}}}
 
 
 
 "--- mapleader , -------------------------------------------------------------------------{{{
-" ,va ,vb ... edit dotfiles
-let $ALIASES = '~/.bash_aliases'
+let $BASH_PROFILE = '~/.bash_profile'
 let $BASHRC  = '~/.bashrc'
+let $BASH_ALIASES = '~/.bash_aliases'
+let $VIMRC   = '~/.vimrc'
 let $VIFMRC  = '~/.vifm/vifmrc.vim' 
 let $TMUX    = '~/.tmux.conf'
-let $VIMRC   = '~/.vimrc'
 
-setlocal foldmethod=marker
-nnoremap <Leader>ea :vs $ALIASES<CR>:setlocal foldmethod=marker<CR>:echo expand('%:p')<CR>
-nnoremap <Leader>eb :vs $BASHRC <CR>:setlocal foldmethod=marker<CR>:echo expand('%:p')<CR>
-nnoremap <Leader>ef :vs $VIFMRC <CR>:setlocal foldmethod=marker<CR>:echo expand('%:p')<CR>
-nnoremap <Leader>et :vs $TMUX   <CR>:setlocal foldmethod=marker<CR>:echo expand('%:p')<CR>
-nnoremap <Leader>ev :vs $VIMRC  <CR>:setlocal foldmethod=marker<CR>:echo expand('%:p')<CR>
+nnoremap <Leader>ebp :vs $BASH_PROFILE<cr>:echo expand('%:p')<cr>
+nnoremap <Leader>eb :vs $BASHRC <CR>:echo expand('%:p')<CR>
+nnoremap <Leader>ea :vs $BASH_ALIASES<CR>:echo expand('%:p')<CR>
+nnoremap <Leader>ev :vs $VIMRC  <CR>:echo expand('%:p')<CR>
+nnoremap <Leader>ef :vs $VIFMRC <CR>:echo expand('%:p')<CR>
+nnoremap <Leader>et :vs $TMUX   <CR>:echo expand('%:p')<CR>
 
-" ,mh ,mv ...
 nnoremap <Leader>mh :!make help<CR>
 nnoremap <Leader>mv :!make vars<CR>
 nnoremap <Leader>mc :!make clean<CR>
@@ -256,7 +269,6 @@ nnoremap <Leader>cc I//<ESC>j
 
 
 
-
 "--- @ macros --------------------------------------------------------{{{
 " @c comment C line  //
 "let @c="I// \<Esc>j"
@@ -270,6 +282,7 @@ nnoremap <Leader>cc I//<ESC>j
 "" @f for(int i = 0; i < 10; i++){
 "let @f = "I\<TAB>for(int i = 0; i < 10; i++){\<esc>I\<tab>\<tab>"
 "---------------------------------------------------------------------}}}
+
 
 
 "--- scripts autogroup autocmd ------------------------------{{{
@@ -289,11 +302,12 @@ nnoremap <Leader>cc I//<ESC>j
 "------------------------------------------------------------}}}
 
 
+
 "--- esc save source quit ------------------------------------------------------{{{
 set noesckeys
 set ttimeout
-set ttimeoutlen=300
-set timeoutlen=200
+set ttimeoutlen=600
+set timeoutlen=500
 nnoremap <esc> <esc>:echo"-- NORMAL -- esc"<cr>
 inoremap <esc> <esc>l:echo"-- NORMAL -- esc"<cr>
 vnoremap <esc> <esc>:echo"-- NORMAL -- esc"<cr>
@@ -304,7 +318,7 @@ inoremap <C-s> <esc>:w<cr>l
 vnoremap <C-s> <esc>:w<cr>
 cnoremap <C-s> <esc>:w<cr>
 
-nnoremap �ø :source ~/.vimrc<cr>:echo"sourced: ~/.vimrc"<cr>
+nnoremap <Leader>ss :source ~/.vimrc<cr>:echo"sourced: ~/.vimrc"<cr>
 
 nnoremap <c-q> :wq<cr>
 inoremap <c-q> <ESC>:wq<cr>
@@ -313,6 +327,7 @@ cnoremap <c-q> <ESC>:wq<cr>
 " from Normal mode you can type q followed by enter to quit without saving
 nnoremap q :q<cr>
 "----------------------------------------------------------------------------------}}}
+
 
 
 "--- statusline -----------------------------------{{{
