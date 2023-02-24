@@ -1,8 +1,6 @@
 echo "~/.bashrc"
 
 unalias -a
-stty -ixon
-set -o vi
 
 # green prompt for regular user
 PS1="\[\033[01;32m\]\w\[\033[00m\]\n"
